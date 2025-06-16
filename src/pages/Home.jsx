@@ -1,21 +1,14 @@
 import React, { useState } from 'react'
 import RecipeChart from '../../Components/RecipeChart'
-
+import { searchRecipe,getPopularrecipe } from '../../servises/api'
 
 const Home = () => {
     const [searchQuery, setsearchQuery] = useState("")
-    const recipes = [
-        { id: 1, title: "Vadapaav", },
-        { id: 2, title: "DalBati", },
-        { id: 3, title: "Dhokla", },
-        { id: 4, title: "samosa", },
-    ]
-
+    
     const handleSearch = (e) => {
         e.preventDefault()
         alert(searchQuery)
-
-
+        setsearchQuery("")
     }
     return (
         <div className='home'>
@@ -31,7 +24,7 @@ const Home = () => {
             </form>
             <div className="recipe-grid">
                 {recipes.map((recipe) => (
-                recipe.title.toLowerCase().startsWith(searchQuery) &&   <RecipeChart recipe={recipe} key={recipe.id} />
+                    <RecipeChart recipe={recipe} key={recipe.id} />
                 ))}
             </div>
         </div>
