@@ -1,11 +1,13 @@
 import React from 'react'
-import RecipeChart from '../Components/RecipeChart'
-
+import Home from './pages/Home';
 const App = () => {
+
   return (
-    <div>
-     <RecipeChart/>
-    </div>
+    <>
+   <Home/>
+    
+   
+    </>
   )
 }
 
